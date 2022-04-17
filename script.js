@@ -2,6 +2,9 @@ let hr = document.querySelector('#hr')
 let mn = document.querySelector('#mn')
 let sc = document.querySelector('#sc')
 
+setInterval(setClock,1000)
+
+
 function setClock(){
   let day = new Date()
   let hh = day.getHours() * 30
@@ -12,7 +15,7 @@ function setClock(){
   mn.style.transform = `rotateZ(${mm}deg)`
   sc.style.transform = `rotateZ(${ss}deg)`
 }
-setInterval(setClock,1000)
+
 
 let hour = document.getElementById('hour')
 let minutes = document.getElementById('minutes')
@@ -23,7 +26,7 @@ let h = new Date().getHours();
 let m = new Date().getMinutes();
 let s = new Date().getSeconds();
 
-let am  = h>12? "PM" : "AM"
+let am  = h>=12? "PM" : "AM"
 if(h>12){
   h = h-12
 }
@@ -36,4 +39,4 @@ minutes.innerHTML = m
 seconds.innerHTML = s
 ampm.innerHTML = am
 
-setClock()
+setClock();
